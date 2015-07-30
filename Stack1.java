@@ -7,7 +7,7 @@ public class Stack1 implements ADTStack<Double>{
 	private Vector<Double> myVector = new Vector<Double>(1,1);
 	
 	public Stack1(){	
-		
+		j = 1;
 	}
 	
 	 public void empty(){
@@ -19,25 +19,19 @@ public class Stack1 implements ADTStack<Double>{
 				return true;
 			}
 			else{
-			return false;
+				return false;
 			}	
 		}
 	 
 	 
 	 public void push(double x) {
-		 j++;
-		myVector.addElement(x);
+		
 		}
 	 
 	 
 	 public Double pop() throws Exception{
-		double p = myVector.get(0);	
-		double i = myVector.size();
-		 for (int a = 1;a == i-1;a++ ){ //  
-			 double t = myVector.elementAt(a);
-			 myVector.add(a-1,t);
-		 }
-		 j--;
+		
+		 double p = myVector.remove(myVector.size());
 		 return p;
 		}
 	 
@@ -48,13 +42,13 @@ public class Stack1 implements ADTStack<Double>{
 		
 	
 	public Double peek() throws Exception{
-			return myVector.elementAt(0);
+			return myVector.elementAt(j);
 		}
 
 	@Override
 	public void push(Double x) {
 		// TODO Auto-generated method stub
-		
+		 myVector.add(x);
 	}
 
 	public int getI() {
