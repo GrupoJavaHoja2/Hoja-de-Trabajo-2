@@ -1,8 +1,9 @@
-public class Stack1 implements ADTStack{
+import java.util.*;
+public class Stack1 implements ADTStack<Integer>{
 	private int i;
 	private int j;
 	private int res;
-	private Vector<Integer> v [] = new Vector<Integer>(1,1)
+	private Vector<Integer> myVector = new Vector<Integer>(1,1);
 	
 	public Stack1(){	
 		
@@ -43,7 +44,7 @@ public class Stack1 implements ADTStack{
 		}
 
 	@Override
-	public void push(Object x) {
+	public void push(Integer x) {
 		// TODO Auto-generated method stub
 		
 	}

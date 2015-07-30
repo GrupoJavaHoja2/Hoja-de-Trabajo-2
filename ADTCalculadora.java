@@ -1,11 +1,6 @@
 /*
-Universidad del Valle de Guatemala
-Algoritmos y Estructura de Datos
-Sección: 10
-Diego Morales. Carné: 14012
-Diego Sosa. Carné: 14735
-Julio González. Carné: 14096
-30/07/2015
+Interface para Calculadora, seccion 10 de 
+Algoritmos y estructuras de datos
 Hoja de Trabajo 2
 */
 

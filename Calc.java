@@ -1,6 +1,7 @@
-import java.io.FileNotFoundException;
+import java.util.*;
+import java.io.*;
 
-public class Calc implements ADTCalculadora{
+public class Calc implements ADTCalculadora<Integer>{
 	
 	private int resultado;
 	
@@ -38,7 +39,7 @@ public class Calc implements ADTCalculadora{
 				}
 		    }
 		    String everything = sb.toString();
-		    return everything; 
+		     
 		} finally {
 		    try {
 				br.close();
@@ -48,7 +49,6 @@ public class Calc implements ADTCalculadora{
 			}
 		    
 		}
-	}
 	}
 	
 	public Integer calcular(){
