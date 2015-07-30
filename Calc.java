@@ -1,7 +1,7 @@
 import java.util.*;
 import java.io.*;
 
-public class Calc implements ADTCalculadora<Integer>{
+public class Calc implements ADTCalculadora<Double>{
 	
 	private int resultado;
 	
@@ -51,8 +51,8 @@ public class Calc implements ADTCalculadora<Integer>{
 		}
 	}
 	
-	public Integer calcular(){
-		return  1;
+	public Double calcular(){
+		return  1.0;
 	}
 
 	public int getResultado() {

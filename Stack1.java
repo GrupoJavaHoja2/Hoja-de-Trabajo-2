@@ -1,9 +1,10 @@
 import java.util.*;
-public class Stack1 implements ADTStack<Integer>{
+
+public class Stack1 implements ADTStack<Double>{
 	private int i;
 	private int j;
 	private int res;
-	private Vector<Integer> myVector = new Vector<Integer>(1,1);
+	private Vector<Double> myVector = new Vector<Double>(1,1);
 	
 	public Stack1(){	
 		
@@ -12,6 +13,7 @@ public class Stack1 implements ADTStack<Integer>{
 	 public void empty(){
 		 myVector.removeAllElements();
 	 }
+	 
 	 public boolean isEmpty(){
 			if (myVector.size() == 0){
 				return true;
@@ -20,31 +22,37 @@ public class Stack1 implements ADTStack<Integer>{
 			return false;
 			}	
 		}
-	 public void push(int x) {
+	 
+	 
+	 public void push(double x) {
 		 j++;
 		myVector.addElement(x);
 		}
-	 public Integer pop() throws Exception{
-		int p = myVector.get(0);	
-		int i = myVector.size();
+	 
+	 
+	 public Double pop() throws Exception{
+		double p = myVector.get(0);	
+		double i = myVector.size();
 		 for (int a = 1;a == i-1;a++ ){ //  
-			 int t = myVector.elementAt(a);
+			 double t = myVector.elementAt(a);
 			 myVector.add(a-1,t);
 		 }
 		 j--;
 		 return p;
 		}
+	 
 		
-		public int size(){
+	public int size(){
 			return myVector.size();
 		}
 		
-		public Integer peek() throws Exception{
+	
+	public Double peek() throws Exception{
 			return myVector.elementAt(0);
 		}
 
 	@Override
-	public void push(Integer x) {
+	public void push(Double x) {
 		// TODO Auto-generated method stub
 		
 	}
