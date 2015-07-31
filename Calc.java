@@ -19,7 +19,6 @@ public class Calc implements ADTCalculadora<Double>{
 			br = new BufferedReader(new FileReader(file));
 		} catch (FileNotFoundException e) {
 			// TODO Auto-generated catch block
-			e.printStackTrace();
 		}
 		try {
 		    StringBuilder sb = new StringBuilder();
@@ -28,17 +27,15 @@ public class Calc implements ADTCalculadora<Double>{
 				line = br.readLine();
 			} catch (IOException e) {
 				// TODO Auto-generated catch block
-				e.printStackTrace();
 			}
 
 		    while (line != null) {
 		        sb.append(line);
-		        sb.append(System.lineSeparator());
+		        //sb.append(System.lineSeparator());
 		        try {
 					line = br.readLine();
 				} catch (IOException e) {
 					// TODO Auto-generated catch block
-					e.printStackTrace();
 				}
 		    }
 		    everything = sb.toString();
@@ -47,13 +44,12 @@ public class Calc implements ADTCalculadora<Double>{
 				br.close();
 			} catch (IOException e) {
 				// TODO Auto-generated catch block
-				e.printStackTrace();
 			}
 		    
 		}
 	}
 	
-	public Double calcular(){
+	public Double calcular() throws Exception{
 		double resultado = 0;
 		double resultado2;
 		for (int cont = 0; cont < everything.length();cont++){
@@ -86,13 +82,17 @@ public class Calc implements ADTCalculadora<Double>{
 				Pila.push(9.0);
 			}
 			
+			if (everything.charAt(cont) == '0'  ){
+				Pila.push(0.0);
+			}
+			
+			
 			if (everything.charAt(cont) == '+'){
 				try {
 					resultado = Pila.pop() + Pila.pop();
 					Pila.push(resultado);
 				} catch (Exception e) {
 					// TODO Auto-generated catch block
-					e.printStackTrace();
 				}//Try
 			}//If
 			
@@ -102,7 +102,6 @@ public class Calc implements ADTCalculadora<Double>{
 					Pila.push(resultado);
 				} catch (Exception e) {
 					// TODO Auto-generated catch block
-					e.printStackTrace();
 				}//Try
 			}//If
 			
@@ -112,7 +111,6 @@ public class Calc implements ADTCalculadora<Double>{
 					Pila.push(resultado);
 				} catch (Exception e) {
 					// TODO Auto-generated catch block
-					e.printStackTrace();
 				}//Try
 			}//If
 			
@@ -120,17 +118,17 @@ public class Calc implements ADTCalculadora<Double>{
 				try {
 					resultado = Pila.pop() ;
 					resultado2 = Pila.pop();
-					if (resultado2 == 0){
+					if (resultado == 0){
+						System.out.println("Division dentro de Cero!! \n");
 						return null;
 						}
 					else{
-						resultado = resultado / resultado2;
+						resultado = resultado2 / resultado;
 						Pila.push(resultado);
 					}
 					Pila.push(resultado);
 				} catch (Exception e) {
 					// TODO Auto-generated catch block
-					e.printStackTrace();
 				}//Try
 			}//If
 			
@@ -152,5 +150,7 @@ public class Calc implements ADTCalculadora<Double>{
 		return everything;
 	}
 	
-	
+	public void setLinea(String a){
+		everything = a;
+	}
 }

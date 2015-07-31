@@ -1,6 +1,7 @@
 import java.util.*;
 
 public class Stack1 implements ADTStack<Double>{
+	
 	private int i;
 	private int j;
 	private int res;
@@ -24,15 +25,9 @@ public class Stack1 implements ADTStack<Double>{
 		}
 	 
 	 
-	 public void push(double x) {
-		
-		}
-	 
-	 
 	 public Double pop() throws Exception{
 		
-		 double p = myVector.remove(myVector.size());
-		 return p;
+		 return myVector.remove(myVector.size()-1);
 		}
 	 
 		
@@ -42,13 +37,13 @@ public class Stack1 implements ADTStack<Double>{
 		
 	
 	public Double peek() throws Exception{
-			return myVector.elementAt(j);
+			return myVector.get(j);
 		}
 
 	@Override
 	public void push(Double x) {
 		// TODO Auto-generated method stub
-		 myVector.add(x);
+		myVector.add(x);
 	}
 
 	public int getI() {
